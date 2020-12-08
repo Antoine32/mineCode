@@ -71,7 +71,7 @@ function updateComp(lauch, dir)
             term.setTextColor(colors.red)
             print("Error: " .. tostring(err))
             term.setTextColor(colors.white)
-            -- local _ = io.read()
+            local _ = io.read()
             if good then
                 --term.clear()
             end
