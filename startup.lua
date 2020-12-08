@@ -58,6 +58,7 @@ function updateComp(lauch, dir)
     --    print("")
     -- end
 
+    local _ = io.read()
     Git:cloneTo("")
 
     term.setTextColor(colors.white)
