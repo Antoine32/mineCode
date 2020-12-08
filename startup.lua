@@ -1,6 +1,6 @@
 Git = require "git"
 Git:showOutput(true)
-Git:setPovider("github")
+Git:setProvider("github")
 Git:setRepository("Antoine32", "mineCode", "master")
 
 local function lauchMain()
@@ -8,8 +8,12 @@ local function lauchMain()
 end
 
 function updateComp(lauch, dir)
+    local name = "mineCode"
+
     if dir == nil then
-        dir = ""
+        dir = name
+    else
+        dir = dir .. "/" .. name
     end
 
     term.clear()
@@ -58,6 +62,7 @@ function updateComp(lauch, dir)
     --    print("")
     -- end
 
+    shell.run("rm", name)
     Git:cloneTo(dir)
 
     term.setTextColor(colors.white)
