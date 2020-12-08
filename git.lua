@@ -120,9 +120,7 @@ function Git:cloneTo(folder)
         error("usage: cloneTo(folder)")
     end
 
-    if fs.exists(folder) then
-        error("This folder already exists!")
-    else
+    if not fs.exists(folder) then
         fs.makeDir(folder)
     end
 

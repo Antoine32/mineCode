@@ -61,7 +61,7 @@ function updateComp(lauch, dir)
     local fil = fs.list(dir)
 
     for i, j in pairs(fil) do
-        if string.find(j, "lua") then
+        if string.find(j, "lua") and j ~= "git.lua" then
             shell.run("rm", j)
         end
     end
