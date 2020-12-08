@@ -1,3 +1,5 @@
+require "startup"
+
 connected = false
 
 require "stringop"
@@ -5,7 +7,6 @@ json = require "json"
 terminal = require "terminal"
 reader = require "reader"
 require "ext"
-require "startup"
 require "turtle"
 
 local continue = true
