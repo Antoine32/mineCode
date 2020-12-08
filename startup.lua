@@ -63,7 +63,7 @@ function updateComp(lauch, dir)
     --
     --    print("")
     -- end
-
+    local _ = io.read()
     shell.run("rm", name)
     Git:cloneTo(dir .. "/" .. name)
 
