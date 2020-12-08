@@ -8,8 +8,14 @@ local function lauchMain()
 end
 
 function updateComp(lauch, dir)
+    local name = "mineCode"
+    local dirClone
+
     if dir == nil then
         dir = ""
+        dirClone = name
+    else
+        dirClone = dir .. "/" .. name
     end
 
     term.clear()
@@ -58,8 +64,8 @@ function updateComp(lauch, dir)
     --    print("")
     -- end
 
-    local _ = io.read()
-    Git:cloneTo("")
+    shell.run("rm", name)
+    Git:cloneTo(dir .. "/" .. name)
 
     term.setTextColor(colors.white)
     term.clear()
@@ -72,9 +78,9 @@ function updateComp(lauch, dir)
             term.setTextColor(colors.red)
             print("Error: " .. tostring(err))
             term.setTextColor(colors.white)
-            local _ = io.read()
+            -- local _ = io.read()
             if good then
-                --term.clear()
+                term.clear()
             end
         until good
     end
