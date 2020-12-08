@@ -4,7 +4,7 @@ Git:setProvider("github")
 Git:setRepository("Antoine32", "mineCode", "master")
 
 local function lauchMain()
-    shell.run("main.lua")
+    loadfile("main.lua")
 end
 
 function updateComp(lauch, dir)
