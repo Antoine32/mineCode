@@ -8,14 +8,8 @@ local function lauchMain()
 end
 
 function updateComp(lauch, dir)
-    local name = "mineCode"
-    local dirClone
-
     if dir == nil then
         dir = ""
-        dirClone = name
-    else
-        dirClone = dir .. "/" .. name
     end
 
     term.clear()
@@ -63,9 +57,16 @@ function updateComp(lauch, dir)
     --
     --    print("")
     -- end
-    local _ = io.read()
-    shell.run("rm", name)
-    Git:cloneTo(dir .. "/" .. name)
+
+    local fil = fs.list(dir)
+
+    for i, j in pairs(fil) do
+        if string.find(j, "lua") then
+            shell.run("rm", j)
+        end
+    end
+
+    Git:cloneTo(dir)
 
     term.setTextColor(colors.white)
     term.clear()
