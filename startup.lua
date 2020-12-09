@@ -86,7 +86,7 @@ function updateComp(lauch, dir)
     end
 end
 
-if connected == nil or arg[1] ~= nil then
+if connected == nil and arg[1] ~= nil then
     local a = io.read()
     updateComp(arg[1])
 end
