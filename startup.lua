@@ -1,8 +1,3 @@
-Git = require "git"
-Git:showOutput(true)
-Git:setProvider("github")
-Git:setRepository("Antoine32", "mineCode", "master")
-
 local function lauchMain()
     shell.run("main.lua")
 end
@@ -65,7 +60,11 @@ function updateComp(lauch, dir)
     --        shell.run("rm", j)
     --    end
     --end
-
+    
+    Git = require "git"
+    Git:showOutput(true)
+    Git:setProvider("github")
+    Git:setRepository("Antoine32", "mineCode", "master")
     Git:cloneTo(dir)
 
     term.setTextColor(colors.white)
