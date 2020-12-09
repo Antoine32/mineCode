@@ -60,7 +60,7 @@ function updateComp(lauch, dir)
     --        shell.run("rm", j)
     --    end
     --end
-    
+
     Git = require "git"
     Git:showOutput(true)
     Git:setProvider("github")
@@ -87,5 +87,6 @@ function updateComp(lauch, dir)
 end
 
 if connected == nil or arg[1] ~= nil then
+    local a = io.read()
     updateComp(arg[1])
 end
