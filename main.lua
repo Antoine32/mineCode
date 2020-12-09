@@ -1,7 +1,6 @@
-require "startup"
-
 connected = false
 
+require "startup"
 require "stringop"
 json = require "json"
 terminal = require "terminal"
