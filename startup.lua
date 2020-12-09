@@ -88,5 +88,5 @@ end
 
 if connected == nil and arg[1] ~= nil then
     local a = io.read()
-    updateComp(arg[1])
+    --updateComp(arg[1])
 end
