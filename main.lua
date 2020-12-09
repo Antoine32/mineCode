@@ -1,4 +1,4 @@
-connected = false
+connected = true
 
 require "startup"
 require "stringop"
